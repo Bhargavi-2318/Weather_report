@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Weather App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="top-error" id="topError"></div>
+
+<div class="card">
+    <div class="search">
+        <input type="text" placeholder="Enter city name" spellcheck="false">
+        <button class="enter-btn">Enter</button>
+        <p class="error-msg"></p>
+    </div>
+</div>
+<script>
+    const apiKey = "9d7bc2870b3d64bf7e973d4441f0b1f1";
+    const searchBox = document.querySelector(".search input");
+    const searchBtn = document.querySelector(".search button");
+    const topError = document.getElementById("topError");
+
+    function showError(message) {
+        topError.innerHTML = `
+            <span class="wrong-mark">✖</span>
+            <span class="error-text">${message}</span>
+        `;
+        topError.style.display = "flex";
+
+        setTimeout(() => {
+            topError.style.display = "none";
+        }, 3000);
+    }
+
+    async function validateAndGo() {
+        const city = searchBox.value.trim();
+
+        // 1️⃣ Empty input check
+        if (city === "") {
+            showError("Please enter your city");
+            return;
+        }
+
+        // 2️⃣ Validate city using API
+        try {
+            const apiUrl =
+              `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}`;
+
+            const response = await fetch(apiUrl);
+
+            // ❌ Wrong city → stay on same page
+            if (!response.ok) {
+                showError("City not found, check once");
+                return;
+            }
+
+            // ✅ Correct city → go to weather page
+            window.location.href = "weather.html?city=" + city;
+
+        } catch (error) {
+            showError("City not found, check once");
+        }
+    }
+
+    searchBtn.addEventListener("click", validateAndGo);
+
+    searchBox.addEventListener("keyup", (e) => {
+        if (e.key === "Enter") {
+            validateAndGo();
+        }
+    });
+</script>
+
+
+</body>
+</html>

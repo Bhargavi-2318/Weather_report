@@ -1,0 +1,152 @@
+.hidden {
+    display: none;
+}
+
+.weather-icon {
+    width: 150px;
+    height: auto;
+}
+
+.card {
+    width: 95%;
+    max-width: 520px;
+    margin: 100px auto 0;
+    padding: 50px 45px;
+    border-radius: 20px;
+    text-align: center;
+    color: #fff;
+
+    background: linear-gradient(135deg, #00feba, #5b548a);
+
+}
+
+.search {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+.search input {
+    width: 95%;
+    height: 50px;         
+    border: 0;
+    outline: 0;
+    background: #ebfffc;
+    color: #555;
+    padding: 0 25px;
+    border-radius: 25px;
+    font-size: 18px;
+    margin: 0 auto;
+}
+.search button {
+    width: 25%;
+    border: none;
+    outline: none;
+    background: #ebfffc;
+    color: #333;
+    border-radius: 25px;
+    margin: 0 auto;
+    height: 50px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 500;
+}
+.search button:hover {
+    background: #008000;   /* REAL green */
+    color: #ffffff;
+    transition: 0.3s ease;
+}
+
+.weather h1 {
+    font-size: 80px;
+    font-weight: 500;
+}
+.weather h2 {
+    font-size: 45px;
+    font-weight: 400;
+    margin-top: -10px;
+}
+.details {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    margin-top: 50px;
+}
+.col {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-align: left;
+}
+.col img {
+    width: 40px;
+    margin-right: 10px;
+}
+.humidity, .wind {
+    font-size: 28px;
+    margin-top: -6px;
+}
+.weather-type {
+    font-size: 22px;
+    margin-top: 8px;
+    text-transform: capitalize;
+}
+.back-btn {
+    display: block;
+    margin: 25px auto 0;
+    width: 25%;
+    height: 50px;
+    border: none;
+    outline: none;
+    background: #ebfffc;
+    color: #333;
+    border-radius: 25px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.back-btn:hover {
+    background: #008000;
+    color: #fff;
+    transition: 0.3s ease;
+}
+.error-msg {
+    color: #ffdddd;
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+body {
+    background: url("https://www.hdwallpapers.in/download/aerial_view_of_clouds_under_light_blue_sky_4k_hd_light_blue-3840x2160.jpg") no-repeat center center fixed;
+    background-size: cover;
+}
+.top-error {
+    position: fixed;
+    top: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #ffffff;        /* white background */
+    padding: 16px 26px;         /* more padding */
+    border-radius: 10px;
+    display: none;
+    align-items: center;
+    gap: 14px;
+    z-index: 1000;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.25);
+}
+
+/* ❌ wrong mark */
+.wrong-mark {
+    color: red;
+    font-size: 32px;            /* ⬅ BIGGER mark */
+    font-weight: bold;
+}
+
+/* error text */
+.error-text {
+    font-size: 18px;            /* ⬅ bigger text */
+    font-weight: 500;
+    color: #333;
+}
