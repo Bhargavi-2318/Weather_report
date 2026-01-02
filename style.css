@@ -52,7 +52,7 @@
     font-weight: 500;
 }
 .search button:hover {
-    background: #008000;   /* REAL green */
+    background: #008000;   
     color: #ffffff;
     transition: 0.3s ease;
 }
@@ -127,8 +127,8 @@ body {
     top: 15px;
     left: 50%;
     transform: translateX(-50%);
-    background: #ffffff;        /* white background */
-    padding: 16px 26px;         /* more padding */
+    background: #ffffff;        
+    padding: 16px 26px;         
     border-radius: 10px;
     display: none;
     align-items: center;
@@ -137,16 +137,16 @@ body {
     box-shadow: 0 6px 15px rgba(0,0,0,0.25);
 }
 
-/* ❌ wrong mark */
+
 .wrong-mark {
     color: red;
-    font-size: 32px;            /* ⬅ BIGGER mark */
+    font-size: 32px;            
     font-weight: bold;
 }
 
-/* error text */
 .error-text {
-    font-size: 18px;            /* ⬅ bigger text */
+    font-size: 18px;            
     font-weight: 500;
     color: #333;
+
 }
