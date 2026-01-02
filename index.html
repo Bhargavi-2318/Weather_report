@@ -36,26 +36,22 @@
     async function validateAndGo() {
         const city = searchBox.value.trim();
 
-        // 1️⃣ Empty input check
+       
         if (city === "") {
             showError("Please enter your city");
             return;
         }
-
-        // 2️⃣ Validate city using API
         try {
             const apiUrl =
               `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}`;
 
             const response = await fetch(apiUrl);
-
-            // ❌ Wrong city → stay on same page
             if (!response.ok) {
                 showError("City not found, check once");
                 return;
             }
 
-            // ✅ Correct city → go to weather page
+           
             window.location.href = "weather.html?city=" + city;
 
         } catch (error) {
@@ -74,4 +70,5 @@
 
 
 </body>
+
 </html>
